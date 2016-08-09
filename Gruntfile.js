@@ -18,5 +18,5 @@ grunt.initConfig({
   grunt.loadNpmTasks('grunt-critical');
 
   // Default tasks.
-  grunt.registerTask('default', ['critical']);
+  //grunt.registerTask('default', ['critical']);
 };
