@@ -7,9 +7,9 @@ grunt.initConfig({
         base: './'
       },
       // The source file
-      src: 'http://brandcms4.mindtree.com/TidePage/Tide-home-async5.html',
+      src: 'dist/tide.html',
       // The destination file
-      dest: 'result.css'
+      dest: 'dist/result.css'
       }
     }
   });
@@ -18,5 +18,6 @@ grunt.initConfig({
   grunt.loadNpmTasks('grunt-critical');
 
   // Default tasks.
-  //grunt.registerTask('default', ['critical']);
+  grunt.registerTask('default', ['critical']);
+  //grunt.registerTask('default');
 };
