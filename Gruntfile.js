@@ -1,5 +1,7 @@
 module.exports = function (grunt) {
 
+
+
   grunt.initConfig({
     concat: {
       options: {
@@ -18,7 +20,7 @@ module.exports = function (grunt) {
         src: '*.html',
         dest: 'dist/',
       },
-      css : {
+      css: {
         expand: true,
         cwd: 'src/css',
         src: '*.css',
@@ -26,6 +28,16 @@ module.exports = function (grunt) {
       },
     },
 
+    imagemin: {                          // Task
+      dynamic: {                         // Another target
+        files: [{
+          expand: true,                  // Enable dynamic expansion
+          cwd: 'src/img/',                   // Src matches are relative to this path
+          src: ['**/*.{png,jpg,gif}'],   // Actual patterns to match
+          dest: 'dist/assets'                  // Destination path prefix
+        }]
+      }
+    },
 
 
     //    uglify: {
@@ -59,6 +71,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   // Default tasks.
-  grunt.registerTask('default', ['copy', 'concat']);
+  grunt.registerTask('default', ['imagemin', 'copy', 'concat']);
 };
