@@ -27,7 +27,17 @@ module.exports = function (grunt) {
         dest: 'dist/assets/css/',
       },
     },
-
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'dist/assets/css/all.css': ['src/css/globalltr.css', 'src/css/sitemaster.css']
+        }
+      }
+    },
     imagemin: {                          // Task
       dynamic: {                         // Another target
         files: [{
@@ -72,6 +82,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-csscomb');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   // Default tasks.
   grunt.registerTask('default', ['imagemin', 'copy', 'concat']);
 };

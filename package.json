@@ -20,9 +20,11 @@
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-critical": "^0.2.1"
+    "grunt-critical": "^0.2.1",
+    "grunt-csscomb": "^3.1.1"
   }
 }
