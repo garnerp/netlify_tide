@@ -85,5 +85,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-csscomb');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   // Default tasks.
-  grunt.registerTask('default', ['imagemin', 'copy', 'concat']);
+  grunt.registerTask('default', ['imagemin', 'cssmin', 'copy', 'concat']);
 };
