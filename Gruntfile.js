@@ -18,7 +18,14 @@ module.exports = function (grunt) {
         src: '*.html',
         dest: 'dist/',
       },
+      css : {
+        expand: true,
+        cwd: 'src/css',
+        src: '*.css',
+        dest: 'dist/css/',
+      },
     },
+
 
 
     //    uglify: {
