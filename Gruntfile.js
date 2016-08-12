@@ -1,8 +1,7 @@
 module.exports = function (grunt) {
 
-
-
   grunt.initConfig({
+    
     concat: {
       options: {
         separator: ';',
@@ -27,6 +26,7 @@ module.exports = function (grunt) {
         dest: 'dist/assets/css/',
       },
     },
+
     cssmin: {
       options: {
         shorthandCompacting: false,
@@ -38,6 +38,7 @@ module.exports = function (grunt) {
         }
       }
     },
+
     imagemin: {                          // Task
       dynamic: {                         // Another target
         files: [{
@@ -61,19 +62,27 @@ module.exports = function (grunt) {
     //      }
     //    },
 
-    /*  
+      
       critical: {
           dist: {
             options: {
-              base: './'
-            },
-            // The source file
-            src: 'dist/tide.html',
+
+                          // The source file
+//            src: 'dist/index.html',
+
             // The destination file
-            dest: 'dist/result.css'
+
+                url: 'http://garnerp.netlify.com/',
+                width: 1200,
+                height: 900,
+                outputfile: "critical.css",
+                filename: "/path/to/local/all.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+                buffer: 800*1024,
+                ignoreConsole: false
+            }
           }
         }
-    */
+    
   });
 
   // Load the plugins
