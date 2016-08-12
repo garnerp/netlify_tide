@@ -62,16 +62,48 @@ module.exports = function (grunt) {
     //      }
     //    },
 
+    csscomb: {
+      dist: {
+        files: {
+          'dist/assets/css/all_comb.css': ['dist/assets/css/all.css'],
+        }
+      },
+    },
 
+    clean: {
+      build: {
+        src: ['dist/*']
+      }
+    },
+    /*
+        critical: {
+          dist: {
+            options: {
+    //          base: './'
+            },
+            // The source file
+            src: 'dist/index.html',
+            // The destination file
+            dest: 'dist/result.html'
+          }
+        },
+    */
     critical: {
       dist: {
         options: {
-//          base: './'
+          base: './',
+          dimensions: [{
+            width: 1300,
+            height: 900
+          },
+            {
+              width: 500,
+              height: 900
+            }]
         },
-        // The source file
-        src: 'dist/index.html',
-        // The destination file
-        dest: 'dist/result.html'
+        files: [
+          { src: ['dist/index.html'], dest: 'dist/index2.html' }
+        ]
       }
     }
 
@@ -87,20 +119,22 @@ module.exports = function (grunt) {
     //                filename: "/path/to/local/all.css", // Using path.resolve( path.join( ... ) ) is a good idea here
     //                buffer: 800*1024,
     //                ignoreConsole: false
-//  }
-//          }
-//        }
-    
+    //  }
+    //          }
+    //        }
+
   });
 
-// Load the plugins
-grunt.loadNpmTasks('grunt-critical');
-grunt.loadNpmTasks('grunt-contrib-uglify');
-grunt.loadNpmTasks('grunt-contrib-concat');
-grunt.loadNpmTasks('grunt-contrib-copy');
-grunt.loadNpmTasks('grunt-contrib-imagemin');
-grunt.loadNpmTasks('grunt-csscomb');
-grunt.loadNpmTasks('grunt-contrib-cssmin');
-// Default tasks.
-grunt.registerTask('default', ['imagemin', 'cssmin', 'copy', 'concat']);
+  // Load the plugins
+  grunt.loadNpmTasks('grunt-critical');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-csscomb');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+
+  // Default tasks.
+  grunt.registerTask('default', ['clean','imagemin', 'cssmin', 'copy', 'concat']);
 };
