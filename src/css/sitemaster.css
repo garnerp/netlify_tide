@@ -645,7 +645,6 @@ label {
     background-color: transparent;
     cursor: pointer;
     text-indent: 0;
-    background-image: url("/en-us/-/media/Tide/Images/Common Icons/page_2off.png");
     background-repeat: no-repeat;
     height: 16px;
     width: 16px;
@@ -653,7 +652,6 @@ label {
 
 .carousel-indicators .active {
     cursor: pointer;
-    background-image: url("/en-us/-/media/Tide/Images/Common Icons/page_2on.png");
     background-repeat: no-repeat;
     background-color: transparent;
 }
@@ -1327,7 +1325,6 @@ ul.menu li ul.sub-menu .view-all-section a {
     text-align: left;
     white-space: nowrap;
     padding: 0 18px 0 0;
-    background: url("/en-us/-/media/Tide/Images/Common Icons/blue_arrow.png") no-repeat right center;
     font-size: 1.4em;
     box-shadow: none;
     text-shadow: none;
