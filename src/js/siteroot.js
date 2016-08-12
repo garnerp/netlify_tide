@@ -1824,6 +1824,7 @@ $(window).resize(function() {
     })
 });
 youTubeSlide = null;
+/* Commented out the inclusion of this Youtube tag.  Why is this even built this way in the first place?  */
 //tag = document.createElement("script");
 //tag.src = "http://www.youtube.com/iframe_api";
 //firstScriptTag = document.getElementsByTagName("script")[0];
