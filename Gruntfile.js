@@ -75,19 +75,23 @@ module.exports = function (grunt) {
         src: ['dist/*']
       }
     },
-    /*
-        critical: {
-          dist: {
-            options: {
-    //          base: './'
-            },
-            // The source file
-            src: 'dist/index.html',
-            // The destination file
-            dest: 'dist/result.html'
-          }
+
+    critical: {
+      test: {
+        options: {
+          base: './',
+          css: [
+            'dist/assets/css/all.css'
+          ],
         },
-    */
+        // The source file
+        src: 'http://garnerp.netlify.com/', //dist/index.html
+        // The destination file
+        dest: 'dist/result.html'
+      }
+    },
+
+    /*
     critical: {
       dist: {
         options: {
@@ -106,6 +110,7 @@ module.exports = function (grunt) {
         ]
       }
     }
+    */
 
     // The source file
     //            src: 'dist/index.html',
@@ -122,7 +127,21 @@ module.exports = function (grunt) {
     //  }
     //          }
     //        }
-
+    /*
+        criticalcss: {
+          custom: {
+            options: {
+                    url: "dist/index.html",
+                    width: 1200,
+                    height: 900,
+                    outputfile: "dist/critical.css",
+                    filename: "dist/assets/css/all.css", // Using path.resolve( path.join( ... ) ) is a good idea here
+                    ignoreConsole: false
+    
+            }
+          }
+        },
+    */
   });
 
   // Load the plugins
@@ -134,7 +153,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-csscomb');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  //grunt.loadNpmTasks('grunt-criticalcss'); // trying this one from Filament Group
 
   // Default tasks.
-  grunt.registerTask('default', ['clean','imagemin', 'cssmin', 'copy', 'concat']);
+  grunt.registerTask('default', ['clean', 'imagemin', 'cssmin', 'copy', 'concat', 'critical']);
 };
