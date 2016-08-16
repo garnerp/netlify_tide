@@ -77,7 +77,7 @@ module.exports = function (grunt) {
     },
 
     critical: {
-      test: {
+      dist: {
         options: {
           base: './',
           css: [
@@ -85,7 +85,8 @@ module.exports = function (grunt) {
           ],
         },
         // The source file
-        src: 'http://garnerp.netlify.com/', //dist/index.html
+        //        src: 'http://garnerp.netlify.com/', //dist/index.html
+        src: 'dist/index.html',
         // The destination file
         dest: 'dist/result.html'
       }
