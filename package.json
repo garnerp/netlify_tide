@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/garnerp/netlify_tide",
   "devDependencies": {
+    "autoprefixer": "^6.4.0",
     "critical": "^0.7.3",
+    "cssnano": "^3.7.3",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
@@ -28,6 +30,8 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-critical": "^0.2.1",
     "grunt-criticalcss": "^1.0.2",
-    "grunt-csscomb": "^3.1.1"
+    "grunt-csscomb": "^3.1.1",
+    "grunt-postcss": "^0.8.0",
+    "pixrem": "^3.0.1"
   }
 }

@@ -91,7 +91,26 @@ module.exports = function (grunt) {
         dest: 'dist/result.html'
       }
     },
+    postcss: {
+      options: {
+//        map: true, // inline sourcemaps
 
+        // or
+        map: {
+          inline: false, // save all sourcemaps as separate files...
+          annotation: 'dist/assets/css/maps/' // ...to the specified directory
+        },
+
+        processors: [
+//          require('pixrem')(), // add fallbacks for rem units
+          require('autoprefixer')({ browsers: 'last 2 versions' }), // add vendor prefixes
+          require('cssnano')() // minify the result
+        ]
+      },
+      dist: {
+        src: 'dist/assets/css/all.css'
+      }
+    },
     /*
     critical: {
       dist: {
@@ -154,8 +173,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-csscomb');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  //grunt.loadNpmTasks('grunt-criticalcss'); // trying this one from Filament Group
+  grunt.loadNpmTasks('grunt-postcss');
 
   // Default tasks.
-  grunt.registerTask('default', ['clean', 'imagemin', 'cssmin', 'copy', 'concat', 'critical']);
+  grunt.registerTask('default', ['clean', 'imagemin', 'cssmin', 'copy', 'concat', 'postcss', 'critical']);
 };
