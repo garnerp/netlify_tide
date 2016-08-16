@@ -176,5 +176,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-postcss');
 
   // Default tasks.
-  grunt.registerTask('default', ['clean', 'imagemin', 'cssmin', 'copy', 'concat', 'postcss', 'critical']);
+  // removed cssmin that was after imagemin
+  grunt.registerTask('default', ['clean', 'imagemin', 'copy', 'concat', 'postcss', 'critical']);
 };
