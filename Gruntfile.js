@@ -177,5 +177,5 @@ module.exports = function (grunt) {
 
   // Default tasks.
   // removed cssmin that was after imagemin
-  grunt.registerTask('default', ['clean', 'imagemin', 'copy', 'concat', 'postcss', 'critical']);
+  grunt.registerTask('default', ['clean', 'imagemin', 'cssmin', 'copy', 'concat', 'postcss', 'critical']);
 };
