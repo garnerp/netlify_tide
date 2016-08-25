@@ -89,8 +89,22 @@ module.exports = function (grunt) {
         src: 'dist/index.html',
         // The destination file
         dest: 'dist/result.html'
+      },
+      dist_head: {
+        options: {
+          base: './',
+          css: [
+            'dist/assets/css/all.css'
+          ],
+        },
+        // The source file
+        //        src: 'http://garnerp.netlify.com/', //dist/index.html
+        src: 'dist/index_head.html',
+        // The destination file
+        dest: 'dist/result_head.html'
       }
     },
+
     postcss: {
       options: {
 //        map: true, // inline sourcemaps
