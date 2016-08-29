@@ -25,6 +25,12 @@ module.exports = function (grunt) {
         src: '*.css',
         dest: 'dist/assets/css/',
       },
+      headers: {
+        expand: true,
+        cwd: 'src',
+        src: '_headers',
+        dest: 'dist/',
+      }
     },
 
     cssmin: {
