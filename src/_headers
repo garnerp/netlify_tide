@@ -1,4 +1,4 @@
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
-  Content-Security-Policy: default-src 'self' ; script-src 'self' ; style-src 'self' ; img-src 'self' ;
+  Content-Security-Policy-Report-Only: default-src 'self' ; script-src 'self' ; style-src 'self' ; img-src 'self' ; report-uri https://01becc6fdd2fe7ab49e6a13c334a9ba8.report-uri.io/r/default/csp/reportOnly;
